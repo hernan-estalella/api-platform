@@ -27,7 +27,8 @@ return [
     ],
 
     'patch_formats' => [
-        'json' => ['application/merge-patch+json'],
+//        'json' => ['application/merge-patch+json'],
+        'json' => ['application/json'],
     ],
 
     'docs_formats' => [

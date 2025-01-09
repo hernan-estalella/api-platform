@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\State\BookProcessor;
+use ApiPlatform\State\ProcessorInterface;
 use App\State\BookProvider;
 use ApiPlatform\State\ProviderInterface;
 use Illuminate\Support\Facades\Mail;
@@ -27,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $this->app->tag(BookProvider::class, ProviderInterface::class);
+
+        $this->app->tag(BookProcessor::class, ProcessorInterface::class);
     }
 }

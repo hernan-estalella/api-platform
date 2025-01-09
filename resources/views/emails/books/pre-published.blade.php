@@ -7,8 +7,8 @@
 </head>
 <body>
     <div>
-        <p>Congratulations <b>{{$book->author}}</b></p>
-        Your book <b>{{$book->title}}</b> has been published.
+        <p><b>{{$book->author}}</b></p>
+        Your book <b>{{$book->title}}</b> is being reviewed by our team.
     </div>
 </body>
 </html>
