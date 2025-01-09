@@ -8,6 +8,9 @@ Welcome to the **API Platform Demo** for Laravel 11! This project demonstrates h
 
 This application is a Laravel-based setup designed to showcase API development. It features database migrations and seeding, email notifications on entity changes, and optimization commands. It uses Laravel Sail (Docker-based solution) to ease local development.
 
+To learn more about using **API Platform** with Laravel, refer to the [API Platform Documentation - Laravel Section](https://api-platform.com/docs/distribution/laravel/).
+
+
 ---
 
 ## Steps to Set Up and Run the Project
