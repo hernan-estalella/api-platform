@@ -5,8 +5,10 @@
 namespace App\State;
 
 use ApiPlatform\Metadata\DeleteOperationInterface;
+use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Operation;
 use ApiPlatform\State\ProcessorInterface;
+use App\Mail\BookDeleted;
 use App\Mail\BookPrePublished;
 use App\Mail\BookPublished;
 use App\Models\Book;
@@ -24,6 +26,7 @@ final class BookProcessor implements ProcessorInterface
     public function process(mixed $data, Operation $operation, array $uriVariables = [], array $context = []): mixed
     {
         if ($operation instanceof DeleteOperationInterface) {
+            $this->sendDeletedMail($data);
             return $data->delete();
         }
 
@@ -51,5 +54,15 @@ final class BookProcessor implements ProcessorInterface
     {
         Mail::to('example@example.com')
             ->send(new BookPublished($data));
+    }
+
+    /**
+     * @param mixed $data
+     * @return void
+     */
+    private function sendDeletedMail(mixed $data): void
+    {
+        Mail::to('example@example.com')
+            ->send(new BookDeleted($data));
     }
 }
